@@ -223,8 +223,8 @@
 
     .deck-player {
       display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr);
-      gap: 2.75rem;
+      grid-template-columns: minmax(0, 2.25fr) minmax(280px, 0.9fr);
+      gap: 2.5rem;
       align-items: start;
     }
 
@@ -244,6 +244,28 @@
       height: 100%;
       object-fit: contain;
       display: block;
+    }
+
+    .deck-fs-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid #333333;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      padding: 0.38rem 0.68rem;
+      cursor: pointer;
+      opacity: 0.85;
+      transition: opacity 0.15s ease, border-color 0.15s ease;
+      z-index: 2;
+    }
+
+    .deck-fs-badge:hover {
+      opacity: 1;
+      border-color: #ffffff;
     }
 
     .deck-progress {
@@ -327,6 +349,104 @@
       font-style: italic;
     }
 
+    /* Full Screen Presentation Modal */
+    .fs-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #000000;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 2.5vw, 2rem);
+    }
+
+    .fs-overlay.open {
+      display: flex;
+    }
+
+    .fs-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #1f1f1f;
+      flex-shrink: 0;
+    }
+
+    .fs-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #999999;
+    }
+
+    .fs-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .fs-body {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .fs-body.notes-hidden {
+      grid-template-columns: 1fr;
+    }
+
+    .fs-body.notes-hidden .fs-notes {
+      display: none;
+    }
+
+    .fs-stage {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      overflow: hidden;
+    }
+
+    .fs-stage img {
+      max-width: 100%;
+      max-height: calc(100vh - 140px);
+      width: auto;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      border: 1px solid #222222;
+      display: block;
+    }
+
+    .fs-notes {
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      border-left: 1px solid #1f1f1f;
+      padding-left: 1.75rem;
+    }
+
+    .fs-bottombar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #1f1f1f;
+      flex-shrink: 0;
+    }
+
     /* All-Slides Vertical Stack View */
     .deck-all-list {
       display: none;
@@ -341,7 +461,7 @@
 
     .deck-all-row {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr);
+      grid-template-columns: minmax(0, 2.1fr) minmax(260px, 0.9fr);
       gap: 2.5rem;
       align-items: start;
       padding-bottom: 3rem;
@@ -359,6 +479,7 @@
       background: #0a0a0a;
       border: 1px solid #262626;
       overflow: hidden;
+      cursor: zoom-in;
     }
 
     .deck-all-img-wrap img {
@@ -405,6 +526,20 @@
         grid-template-columns: 1fr;
         gap: 1.25rem;
       }
+      .fs-body {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+      }
+      .fs-stage img {
+        max-height: 56vh;
+      }
+      .fs-notes {
+        border-left: none;
+        border-top: 1px solid #1f1f1f;
+        padding-left: 0;
+        padding-top: 1rem;
+        max-height: none;
+      }
     }
 
     @media (max-width: 640px) {
@@ -445,12 +580,13 @@
       <div class="slide-desc">
         The complete 68-slide workshop handover deck with speaker notes on the side.
         <div class="copy-bar" style="margin-top: 0.65rem; margin-bottom: 0;">
+          <button class="copy-btn" onclick="openFullScreen()">Full Screen</button>
           <button id="toggle-all-btn" class="copy-btn" onclick="toggleAllSlidesView()">Show All 68 Slides</button>
           <a class="copy-btn" href="https://docs.google.com/presentation/d/1grbsy1d7EljwmjWTkvKnRUB9kol_ZqVl9I5ZGkt1dFM/edit" target="_blank" rel="noopener">Open in Google Slides &nearr;</a>
         </div>
       </div>
       <div class="slide-note">
-        Use &larr; &rarr; arrow keys, click the slide, or jump by chapter below.
+        Use &larr; &rarr; arrow keys, press F for full screen, or jump by chapter below.
       </div>
     </div>
 
@@ -470,6 +606,7 @@
     <div id="deck-player-view" class="deck-player">
       <div class="deck-stage-wrap">
         <div class="deck-stage" id="deck-stage" onclick="handleStageClick(event)" title="Click left/right side to navigate">
+          <button type="button" class="deck-fs-badge" onclick="event.stopPropagation(); openFullScreen();" title="Full Screen (F)">&#x26F6; Full Screen</button>
           <img id="active-slide-img" src="slides/slide_01.webp" alt="Workshop Slide 1" />
           <div id="deck-progress" class="deck-progress" style="width: 1.47%;"></div>
         </div>
@@ -480,6 +617,7 @@
             <button class="copy-btn" onclick="stepSlide(1)">Next &rarr;</button>
           </div>
           <input id="deck-scrubber" class="deck-scrubber" type="range" min="1" max="68" value="1" oninput="goToSlide(parseInt(this.value, 10))" aria-label="Slide scrubber" />
+          <button class="copy-btn" onclick="openFullScreen()">Full Screen</button>
         </div>
       </div>
 
@@ -497,6 +635,37 @@
 
     <!-- All-68-Slides Vertical Scroll View -->
     <div id="deck-all-view" class="deck-all-list"></div>
+
+    <!-- Full-Screen Presentation Overlay -->
+    <div id="fs-overlay" class="fs-overlay" aria-hidden="true">
+      <div class="fs-topbar">
+        <div id="fs-meta" class="fs-meta">SLIDE 01 / 68 &mdash; I. INTRO</div>
+        <div class="fs-actions">
+          <button id="fs-toggle-notes-btn" class="copy-btn" style="padding: 0; min-height: 32px;" onclick="toggleFsNotes()">Hide Notes</button>
+          <button class="copy-btn" style="padding: 0; min-height: 32px;" onclick="closeFullScreen()">Exit Full Screen (Esc)</button>
+        </div>
+      </div>
+      <div id="fs-body" class="fs-body">
+        <div class="fs-stage" onclick="handleStageClick(event)" title="Click left/right side to navigate">
+          <img id="fs-slide-img" src="slides/slide_01.webp" alt="Full Screen Slide" />
+        </div>
+        <div class="fs-notes">
+          <div class="deck-notes-heading">
+            <span>Speaker Notes</span>
+            <button class="copy-btn" style="font-size: 0.85rem; min-height: 28px; padding: 0;" onclick="copyActiveNotes(this)">Copy Notes</button>
+          </div>
+          <div id="fs-slide-notes" class="deck-notes-body"></div>
+        </div>
+      </div>
+      <div class="fs-bottombar">
+        <div class="deck-nav-group">
+          <button class="copy-btn" style="padding: 0; min-height: 32px;" onclick="stepSlide(-1)">&larr; Previous</button>
+          <span id="fs-counter" class="deck-counter">Slide 1 of 68</span>
+          <button class="copy-btn" style="padding: 0; min-height: 32px;" onclick="stepSlide(1)">Next &rarr;</button>
+        </div>
+        <input id="fs-scrubber" class="deck-scrubber" type="range" min="1" max="68" value="1" oninput="goToSlide(parseInt(this.value, 10))" aria-label="Full screen slide scrubber" />
+      </div>
+    </div>
   </section>
 
 
@@ -718,6 +887,8 @@ Object: [describe your object in 1 sentence], no text</div>
     let currentSlideIndex = 1;
     let allSlidesRendered = false;
     let showingAllSlides = false;
+    let isFullScreen = false;
+    let fsNotesHidden = false;
 
     function pad2(n) {
       return n < 10 ? '0' + n : '' + n;
@@ -728,17 +899,17 @@ Object: [describe your object in 1 sentence], no text</div>
       if (idx > SLIDES_DATA.length) idx = SLIDES_DATA.length;
       currentSlideIndex = idx;
       const item = SLIDES_DATA[idx - 1];
+      const metaText = 'SLIDE ' + pad2(item.index) + ' / ' + SLIDES_DATA.length + ' — ' + item.section.toUpperCase();
+      const counterText = 'Slide ' + item.index + ' of ' + SLIDES_DATA.length;
 
       const img = document.getElementById('active-slide-img');
       img.src = item.image;
       img.alt = 'Workshop Slide ' + item.index + (item.title ? ': ' + item.title : '');
 
-      document.getElementById('deck-counter').textContent = 'Slide ' + item.index + ' of ' + SLIDES_DATA.length;
+      document.getElementById('deck-counter').textContent = counterText;
       document.getElementById('deck-scrubber').value = item.index;
       document.getElementById('deck-progress').style.width = ((item.index / SLIDES_DATA.length) * 100).toFixed(2) + '%';
-
-      document.getElementById('active-slide-section').textContent =
-        'SLIDE ' + pad2(item.index) + ' / ' + SLIDES_DATA.length + ' — ' + item.section.toUpperCase();
+      document.getElementById('active-slide-section').textContent = metaText;
 
       const notesEl = document.getElementById('active-slide-notes');
       if (item.notes) {
@@ -747,6 +918,24 @@ Object: [describe your object in 1 sentence], no text</div>
       } else {
         notesEl.textContent = '(Visual slide — no spoken notes)';
         notesEl.classList.add('deck-notes-empty');
+      }
+
+      // Sync Full-Screen Overlay
+      const fsImg = document.getElementById('fs-slide-img');
+      if (fsImg) {
+        fsImg.src = item.image;
+        fsImg.alt = img.alt;
+        document.getElementById('fs-meta').textContent = metaText;
+        document.getElementById('fs-counter').textContent = counterText;
+        document.getElementById('fs-scrubber').value = item.index;
+        const fsNotes = document.getElementById('fs-slide-notes');
+        if (item.notes) {
+          fsNotes.textContent = item.notes;
+          fsNotes.classList.remove('deck-notes-empty');
+        } else {
+          fsNotes.textContent = '(Visual slide — no spoken notes)';
+          fsNotes.classList.add('deck-notes-empty');
+        }
       }
 
       // Highlight matching chapter button
@@ -780,6 +969,54 @@ Object: [describe your object in 1 sentence], no text</div>
         stepSlide(-1);
       } else {
         stepSlide(1);
+      }
+    }
+
+    function openFullScreen(slideIdx) {
+      if (typeof slideIdx === 'number') {
+        goToSlide(slideIdx);
+      }
+      const overlay = document.getElementById('fs-overlay');
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      isFullScreen = true;
+      if (overlay.requestFullscreen) {
+        overlay.requestFullscreen().catch(() => {});
+      }
+    }
+
+    function closeFullScreen() {
+      const overlay = document.getElementById('fs-overlay');
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      isFullScreen = false;
+      if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement && isFullScreen) {
+        const overlay = document.getElementById('fs-overlay');
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        isFullScreen = false;
+      }
+    });
+
+    function toggleFsNotes() {
+      fsNotesHidden = !fsNotesHidden;
+      const body = document.getElementById('fs-body');
+      const btn = document.getElementById('fs-toggle-notes-btn');
+      if (fsNotesHidden) {
+        body.classList.add('notes-hidden');
+        btn.textContent = 'Show Notes';
+      } else {
+        body.classList.remove('notes-hidden');
+        btn.textContent = 'Hide Notes';
       }
     }
 
@@ -820,6 +1057,8 @@ Object: [describe your object in 1 sentence], no text</div>
 
         const imgWrap = document.createElement('div');
         imgWrap.className = 'deck-all-img-wrap';
+        imgWrap.title = 'Click to view full screen';
+        imgWrap.onclick = () => openFullScreen(item.index);
         const img = document.createElement('img');
         img.loading = 'lazy';
         img.src = item.image;
@@ -837,7 +1076,13 @@ Object: [describe your object in 1 sentence], no text</div>
         heading.className = 'deck-notes-heading';
         const label = document.createElement('span');
         label.textContent = 'Speaker Notes';
+        const fsBtn = document.createElement('button');
+        fsBtn.className = 'copy-btn';
+        fsBtn.style.cssText = 'font-size: 0.85rem; min-height: 28px; padding: 0;';
+        fsBtn.textContent = 'Full Screen';
+        fsBtn.onclick = () => openFullScreen(item.index);
         heading.appendChild(label);
+        heading.appendChild(fsBtn);
 
         const body = document.createElement('div');
         body.className = 'deck-notes-body' + (item.notes ? '' : ' deck-notes-empty');
@@ -855,8 +1100,18 @@ Object: [describe your object in 1 sentence], no text</div>
     }
 
     document.addEventListener('keydown', (e) => {
-      if (showingAllSlides) return;
       if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      if (e.key === 'Escape' && isFullScreen) {
+        closeFullScreen();
+        return;
+      }
+      if ((e.key === 'f' || e.key === 'F') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        e.preventDefault();
+        if (isFullScreen) closeFullScreen();
+        else openFullScreen();
+        return;
+      }
+      if (showingAllSlides && !isFullScreen) return;
       if (e.key === 'ArrowRight') {
         stepSlide(1);
       } else if (e.key === 'ArrowLeft') {
@@ -864,21 +1119,23 @@ Object: [describe your object in 1 sentence], no text</div>
       }
     });
 
-    // Touch swipe on slide stage
+    // Touch swipe on slide stage and full-screen stage
     (function() {
-      const stage = document.getElementById('deck-stage');
-      let startX = 0;
-      stage.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) startX = e.touches[0].clientX;
-      }, { passive: true });
-      stage.addEventListener('touchend', (e) => {
-        if (e.changedTouches.length === 1) {
-          const dx = e.changedTouches[0].clientX - startX;
-          if (Math.abs(dx) > 40) {
-            stepSlide(dx < 0 ? 1 : -1);
+      [document.getElementById('deck-stage'), document.getElementById('fs-overlay')].forEach(el => {
+        if (!el) return;
+        let startX = 0;
+        el.addEventListener('touchstart', (e) => {
+          if (e.touches.length === 1) startX = e.touches[0].clientX;
+        }, { passive: true });
+        el.addEventListener('touchend', (e) => {
+          if (e.changedTouches.length === 1) {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 40) {
+              stepSlide(dx < 0 ? 1 : -1);
+            }
           }
-        }
-      }, { passive: true });
+        }, { passive: true });
+      });
     })();
 
     goToSlide(1);
