@@ -1,0 +1,478 @@
+[
+  {
+    "index": 1,
+    "image": "slides/slide_01.webp",
+    "section": "I. Intro — Creative Self-Determination",
+    "title": "AI CREATIVITY — CLP Part 1 - AI & Creativity Workshop",
+    "notes": "Welcome to the Camden Community Leadership Programme AI & Creativity Workshop (Part 1)."
+  },
+  {
+    "index": 2,
+    "image": "slides/slide_02.webp",
+    "section": "I. Intro — Creative Self-Determination",
+    "title": "You don't need permission from gatekeepers to tell your story — AI gives your community's",
+    "notes": "Welcome everyone to the Community Leadership Programme AI workshop. Today is about one thing: Creative Self-Determination. You are running vital community charities across Camden—often completely solo, juggling families, jobs, and sleepless nights. AI isn't here to replace you; it's here to give you an extra pair of hands so your community's authentic voice can never be ignored."
+  },
+  {
+    "index": 3,
+    "image": "slides/slide_03.webp",
+    "section": "I. Intro — Creative Self-Determination",
+    "title": "AI & Creative Self-Determination",
+    "notes": "That is what we call Creative Self-Determination. It’s not about cutting headcount or corporate efficiency—it’s about giving you the agency and confidence to tell your community’s story on your own terms, without waiting for permission or big budgets."
+  },
+  {
+    "index": 4,
+    "image": "slides/slide_04.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "The #1 Founder Bottleneck — You voted Grant Writing as your biggest headache.",
+    "notes": "Right—we have looked at the weird, delightful things we make at Creative Lab. Now let’s get practical, starting with the #1 operational bottleneck you voted for in Oliver’s survey: Grant Writing. Sitting in front of a blank screen at 11 PM trying to guess what corporate jargon funders want to hear. Today, we turn Gemini into your 24/7 personal grant strategist."
+  },
+  {
+    "index": 5,
+    "image": "slides/slide_05.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Partner Spotlight: Camden Giving — I.",
+    "notes": "This isn't a theoretical exercise. Our program partner, Camden Giving, has The Equality Fund 2026 open right now. It closes on October 17th at midday—two weeks from today. Every single charity in this room is eligible to apply for up to £20,000."
+  },
+  {
+    "index": 6,
+    "image": "slides/slide_06.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Camden Giving AI policy — RULE 2",
+    "notes": "Camden Giving has an AI policy. I absolutely love it.\nI think it’s spot on and really ties to what we can all agree on. AI cannot replace humans."
+  },
+  {
+    "index": 7,
+    "image": "slides/slide_07.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "RULE 3 — Be Honest About AI",
+    "notes": "It cannot lie. It’s a tool and we cannot blame AI for our poor judgement.\nIn a sentence, don’t be evil."
+  },
+  {
+    "index": 8,
+    "image": "slides/slide_08.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Camden Giving AI policy — RULE 6",
+    "notes": "I wish some of our politicians agreed with these guidelines too."
+  },
+  {
+    "index": 9,
+    "image": "slides/slide_09.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Not corporate bureaucrats or bank trustees. — A panel of local Camden citizens with lived",
+    "notes": "Here's the secret: Camden Giving uses participatory grantmaking. Your application is not read by corporate bureaucrats or bank trustees—it is read and decided by a panel of local Camden citizens who have personal lived experience of inequality. When a neighbour from Somers Town or Kilburn reads your proposal, they can smell corporate buzzwords and AI slop a mile away. They want the honest truth of your street."
+  },
+  {
+    "index": 10,
+    "image": "slides/slide_10.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "NOT THIS — Corporate AI Slop",
+    "notes": "If you wouldn't say it sitting across a kitchen table over a cup of tea, don't let AI write it. Corporate jargon gets rejected by local panels. Grounded street reality wins."
+  },
+  {
+    "index": 11,
+    "image": "slides/slide_11.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Gemini knows the world. — Personal Intelligence connects it to YOUR charity's Docs & Drive",
+    "notes": "Right now, most AI is like a stranger on the street—it knows the internet, but nothing about your charity. Personal Intelligence bridges that gap by securely connecting Gemini to your Google Workspace—your Docs, Drive, and Gmail. Instead of digging through folders for last year's impact numbers or trustee notes, Gemini can pull straight from your own documents."
+  },
+  {
+    "index": 12,
+    "image": "slides/slide_12.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Gems — Gems = Who you talk to, a specialist who remembers your rules.",
+    "notes": "The biggest time-waster in AI is prompt fatigue—re-explaining what your charity does, who you serve in Camden, and your Kitchen Table tone in every new chat. Gemini Gems fix that. A Gem is a custom specialist you set up once with your charity's background and Camden Giving's rules. Whenever a new grant opens, you just open your Grant Partner Gem and start talking."
+  },
+  {
+    "index": 13,
+    "image": "slides/slide_13.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Skills — Skills = Playbooks you trigger, modular actions you run on any draft.",
+    "notes": "If a Gem is a specialist you chat with, Skills are modular playbooks you can trigger at any moment. Today we are going to use 1 Gem to interview us and write our first draft, and then trigger 2 custom Skills—tough-evaluator and peer-scorecard—to stress-test our facts and cross out any corporate buzzwords."
+  },
+  {
+    "index": 14,
+    "image": "slides/slide_14.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "gastanuke.github.io/clp",
+    "notes": "So now let’s make them to apply for a grant.\n\nYou can access the prompts we’re using from this website, you should be able to do everything from your phone too."
+  },
+  {
+    "index": 15,
+    "image": "slides/slide_15.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Don't Stare at a Blank Page: — Tell the Gem what your charity does in 2 messy sentences.",
+    "notes": "Step 1 is your Grassroots Grant Partner Gem. Instead of staring at a blank portal or pasting long prompts, you just tell the Gem what your charity does in two messy sentences. It flips the script: it interviews YOU 2 or 3 questions at a time, builds a live Grant Ledger of your numbers and budget, and only writes Draft 1 once your real Camden street facts are locked in."
+  },
+  {
+    "index": 16,
+    "image": "slides/slide_16.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "",
+    "notes": "Let’s create your Grassroots Grant Partner Gem together right now. Open Gemini, click Gem Manager -> New Gem, and copy-paste the name and instructions from gastanuke.github.io/clp. In 60 seconds, you’ll have a 24/7 Camden grant strategist saved in your sidebar."
+  },
+  {
+    "index": 17,
+    "image": "slides/slide_17.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Step 2: Skill 1 — tough-evaluator — I.",
+    "notes": "Step 2: Never submit your first draft. Once your Gem writes Draft 1, trigger your first Skill: tough-evaluator. It acts as a tired, skeptical Camden Giving citizen panelist who has read 40 applications today. It gives you 3 blunt reasons your draft would get rejected, points out what street proof is missing, and asks you 1 or 2 sharp questions to fix it in 5 minutes."
+  },
+  {
+    "index": 18,
+    "image": "slides/slide_18.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "",
+    "notes": "Here is how you add your first Skill in Gemini: click More -> Customise -> Skills -> New Skill, and copy-paste tough-evaluator from gastanuke.github.io/clp."
+  },
+  {
+    "index": 19,
+    "image": "slides/slide_19.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Dignity & Pride: — Does it show community strength rather than pity?",
+    "notes": "Step 3: Trigger your second Skill, peer-scorecard. It scores your draft on Street Reality, Dignity & Pride, and the Tea Test—and literally crosses out any corporate buzzwords using strikethrough text with plain human replacements next to them. Then turn your laptop screen to your pod partner and read it aloud over a cup of tea!"
+  },
+  {
+    "index": 20,
+    "image": "slides/slide_20.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "",
+    "notes": "And here is how you add your second Skill in Gemini: click More -> Customise -> Skills -> New Skill, and copy-paste peer-scorecard from gastanuke.github.io/clp."
+  },
+  {
+    "index": 21,
+    "image": "slides/slide_21.webp",
+    "section": "II. Grant Writing — Camden Giving & Gemini",
+    "title": "Hands-On Sprint (20 Mins): Run the 3-Tool Pipeline — I.",
+    "notes": "Now it is your turn—20 minutes in pairs, one types and one talks. First, take 3 minutes to copy-paste the Gem and 2 Skills from gastanuke.github.io/clp. Second, open your Grassroots Grant Partner Gem, answer 2 rounds of interview questions, and generate Draft 1. Third, run @tough-evaluator to plug in missing street facts. Fourth, run @peer-scorecard and read your final paragraph aloud to your partner!"
+  },
+  {
+    "index": 22,
+    "image": "slides/slide_22.webp",
+    "section": "Break",
+    "title": "",
+    "notes": "Amazing work on your Equality Fund drafts! Let’s take a 5-minute bio break—grab a cup of tea, stretch your legs, and when we come back, we will shift from words to visuals and make posters for your projects."
+  },
+  {
+    "index": 23,
+    "image": "slides/slide_23.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "AI is not a creative genius. — It's a fast, obedient, slightly naive pair of hands.",
+    "notes": "Welcome back! You now have a grounded grant draft for your charity. Next, let’s give your project a visual voice to match—without a £20,000 corporate agency on retainer. When it comes to visuals, AI isn’t here to replace your taste; it’s a fast, obedient pair of hands. You are the editor-in-chief."
+  },
+  {
+    "index": 24,
+    "image": "slides/slide_24.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "Default AI: Oily plastic, exaggerated tears, pity-mongering. — Authentic Craft: Physical t",
+    "notes": "You've all seen AI slop. It's that glossy, airbrushed, video-game sheen. When people type 'homeless charity poster', the machine draws crying children in dark alleys with neon lens flares. It feels exploitative and fake. In community work, trust is everything. If your flyer looks like an energy drink advert, nobody trusts you. Dignity is non-negotiable."
+  },
+  {
+    "index": 25,
+    "image": "slides/slide_25.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "Take pictures! Look how wonderful and diverse Camden is. — Use your experience, what do yo",
+    "notes": "Infuse everything with your soul. People love to connect with people, they are not impressed by polished posters."
+  },
+  {
+    "index": 26,
+    "image": "slides/slide_26.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "51 St Pancras Way, London NW1 0PU — Museum of Youth",
+    "notes": "If you need some inspiration, go visit the Museum of Youth just 10 minutes away from here. It’s beautiful."
+  },
+  {
+    "index": 27,
+    "image": "slides/slide_27.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "MY REFERENCES",
+    "notes": "For example I grew up reading photocopied fanzines. I love to work with 2 colors.\nLimitations are a great way to do good design."
+  },
+  {
+    "index": 28,
+    "image": "slides/slide_28.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "MY REFERENCES",
+    "notes": "Risoprint is also great, very tactile."
+  },
+  {
+    "index": 29,
+    "image": "slides/slide_29.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "3 colors, 2 seconds, looping. 100 gifs — REPETITION IS STYLE",
+    "notes": "Repetition is style. When you lock in strict rules—3 colors, 2-second loops, one consistent texture—suddenly 100 different clips feel like a unified brand campaign. For your charity, picking one visual rule and repeating it everywhere builds instant recognition across Camden."
+  },
+  {
+    "index": 30,
+    "image": "slides/slide_30.webp",
+    "section": "III. Anti-Slop & Visual Direction",
+    "title": "MY ADVICE — 1. [Write a 1 sentence style]",
+    "notes": "Stop writing long, polite paragraphs to image tools. Use this two-part formula: first, lock in your visual style in three beats—a one-sentence style, a physical medium with limited colours, and real physical imperfections like ink bleed or paper grain. Then, and only then, write one sentence describing your subject. And ban the word 'photorealistic'—that word triggers the computer's cheesy 3D rendering engine and guarantees plastic slop."
+  },
+  {
+    "index": 31,
+    "image": "slides/slide_31.webp",
+    "section": "Style 1 — Risograph",
+    "title": "STYLE 1 — Risograph",
+    "notes": "Style Card 1: Risograph. Inspired by independent community printshops across London. Strictly two inks—high-contrast scarlet red and deep blue. You get visible halftone dots, grain dithering, and subtle ink misregistration. It feels tactile, joyful, and handmade."
+  },
+  {
+    "index": 32,
+    "image": "slides/slide_32.webp",
+    "section": "Style 1 — Risograph",
+    "title": "STYLE 1 — Risograph",
+    "notes": "Look at what happens when we take an everyday object from your world—battered stacking chairs in a community hall—and run it through a two-color red and blue risograph constraint."
+  },
+  {
+    "index": 33,
+    "image": "slides/slide_33.webp",
+    "section": "Style 1 — Risograph",
+    "title": "Strictly duo tone (red and blue) risograph print featuring distinct grain dithering, tacti",
+    "notes": "Here is the exact prompt. Notice the two halves: first, we lock in the physical medium—strictly duotone red and blue risoprint with halftone dots and ink misregistration. Second, we describe specific, lived-in details: scratched chrome legs, a bent umbrella, a lost wool mitten—all against an expansive clean white background so we have room for text."
+  },
+  {
+    "index": 34,
+    "image": "slides/slide_34.webp",
+    "section": "Style 1 — Risograph",
+    "title": "STYLE 1 — Risograph",
+    "notes": "Another everyday community kitchen moment: the wire draining rack packed with decades of mismatched mugs after a session."
+  },
+  {
+    "index": 35,
+    "image": "slides/slide_35.webp",
+    "section": "Style 1 — Risograph",
+    "title": "Strictly duo tone (red and blue) risograph print featuring distinct grain dithering, tacti",
+    "notes": "Same exact style header at the top, and then we just swap the subject at the bottom: stoneware diner mugs, a chipped porcelain cup, a child’s plastic beaker—explicitly specifying no logos or text on the mugs."
+  },
+  {
+    "index": 36,
+    "image": "slides/slide_36.webp",
+    "section": "Style 1 — Risograph",
+    "title": "STYLE 1 — Risograph",
+    "notes": "I once read that to fill a room, a coffee maker on the stove is enough."
+  },
+  {
+    "index": 37,
+    "image": "slides/slide_37.webp",
+    "section": "Style 1 — Risograph",
+    "title": "STYLE 1 — Risograph",
+    "notes": "Again, keep the risograph recipe identical at the top, and isolate the object against a clean white background with zero surrounding kitchen clutter."
+  },
+  {
+    "index": 38,
+    "image": "slides/slide_38.webp",
+    "section": "Style 2 — Screenprint",
+    "title": "STYLE 2 — Minimalist modernist screenprint on heavy ecru cotton-rag paper. Chalky carbon b",
+    "notes": "Style Card 2: Black and Gold Screenprint. Dense chalky carbon black and burnished antique gold ink on heavy flecked cotton-rag paper, complete with dry-screen micro-defects and registration offsets. It gives immediate authority and timeless dignity to advocacy, adult education, and community campaigns."
+  },
+  {
+    "index": 39,
+    "image": "slides/slide_39.webp",
+    "section": "Style 2 — Screenprint",
+    "title": "STYLE 2 — Black and gold screen print",
+    "notes": "Even with pure geometric shapes locked into an asymmetric grid, the flecked cotton paper and chalky screenprint ink make it feel like a physical gallery print rather than a cold computer graphic."
+  },
+  {
+    "index": 40,
+    "image": "slides/slide_40.webp",
+    "section": "Style 2 — Screenprint",
+    "title": "Minimalist modernist screenprint on heavy ecru cotton-rag paper. Chalky carbon black and b",
+    "notes": "Look at the prompt structure: first, the tactile duotone screenprint medium on heavy ecru cotton-rag paper; second, bold monolithic geometric shapes arranged in an asymmetric grid across a warm off-white canvas."
+  },
+  {
+    "index": 41,
+    "image": "slides/slide_41.webp",
+    "section": "Style 2 — Screenprint",
+    "title": "STYLE 2 — Black and gold screen print",
+    "notes": "Here, even simpler."
+  },
+  {
+    "index": 42,
+    "image": "slides/slide_42.webp",
+    "section": "Style 2 — Screenprint",
+    "title": "Minimalist modernist screenprint on heavy ecru cotton-rag paper. Chalky carbon black and b",
+    "notes": "Sometimes less is more."
+  },
+  {
+    "index": 43,
+    "image": "slides/slide_43.webp",
+    "section": "Style 3 — 80’s Fanzine",
+    "title": "STYLE 3 — Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy gr",
+    "notes": "Style Card 3: 80s DIY Fanzine. Think Manchester post-punk zines like Acrylic Daze. Brutal high-contrast photocopy grain, over-inked black toner, visible paste-up tape edges, and dirty scanner-bed noise. It screams grassroots authenticity—perfect for youth initiatives, music, and community gardens."
+  },
+  {
+    "index": 44,
+    "image": "slides/slide_44.webp",
+    "section": "Style 3 — 80’s Fanzine",
+    "title": "STYLE 3 — 80s Monochrome Fanzine",
+    "notes": "Look at how raw and tactile this cut-and-paste photocopy style looks for a community gardening or food project."
+  },
+  {
+    "index": 45,
+    "image": "slides/slide_45.webp",
+    "section": "Style 3 — 80’s Fanzine",
+    "title": "Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy grain, deep",
+    "notes": "The top half locks in the xerox photocopy grain, over-inked black toner, and visible tape lines. The bottom half is just one sentence: an overhead cutout of terracotta pots with rosemary, mint, and heavy gardening shears."
+  },
+  {
+    "index": 46,
+    "image": "slides/slide_46.webp",
+    "section": "Style 3 — 80’s Fanzine",
+    "title": "STYLE 3 — 80s Monochrome Fanzine",
+    "notes": "Here is the exact same zine style for a supper club, food bank, or community bakery."
+  },
+  {
+    "index": 47,
+    "image": "slides/slide_47.webp",
+    "section": "Style 3 — 80’s Fanzine",
+    "title": "Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy grain, deep",
+    "notes": "Just swap the subject line at the bottom: a round crusty loaf sliced open on a cutting board beside a butter dish and spreader knife."
+  },
+  {
+    "index": 48,
+    "image": "slides/slide_48.webp",
+    "section": "Style 3 — 80’s Fanzine",
+    "title": "STYLE 3 — 80s Monochrome Fanzine",
+    "notes": "And here it is for a youth club, strategy workshop, or after-school games night."
+  },
+  {
+    "index": 49,
+    "image": "slides/slide_49.webp",
+    "section": "Style 3 — 80’s Fanzine",
+    "title": "Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy grain, deep",
+    "notes": "Again: same DIY zine header, swapped with a hard-angled side profile of wooden chess pieces casting long black shadows."
+  },
+  {
+    "index": 50,
+    "image": "slides/slide_50.webp",
+    "section": "Style 4 — Clay Animation",
+    "title": "STYLE 4 — A miniature clay animation 3D floating [object with attributes] on a white backg",
+    "notes": "Style Card 4: Miniature Clay Animation. Prompt formula: 'A miniature clay animation 3D floating [object] on a white background. The colors are bright and saturated, and the overall look is playful. Everything in the scene is made of colorful clay.' You can put literally whatever object you like at the end, and it gives you that tactile Aardman stop-motion charm that makes people smile instantly."
+  },
+  {
+    "index": 51,
+    "image": "slides/slide_51.webp",
+    "section": "Style 4 — Clay Animation",
+    "title": "Miniature Clay Animation — STYLE 4",
+    "notes": "Look at the texture here—you can practically feel the thumbprints in the clay. It is playful, warm, and impossible to mistake for plastic AI slop."
+  },
+  {
+    "index": 52,
+    "image": "slides/slide_52.webp",
+    "section": "Style 4 — Clay Animation",
+    "title": "A miniature clay animation 3D floating [object with attributes] on a white background. The",
+    "notes": "The formula stays identical every time: \"A miniature clay animation 3D floating [object] on a white background...\" Here, the object is taut vertical warp threads on a wooden loom with bobbins and snips."
+  },
+  {
+    "index": 53,
+    "image": "slides/slide_53.webp",
+    "section": "Style 4 — Clay Animation",
+    "title": "Miniature Clay Animation — STYLE 4",
+    "notes": "And for literacy, education, or community libraries—a row of colourful clay books leaning on a wooden shelf."
+  },
+  {
+    "index": 54,
+    "image": "slides/slide_54.webp",
+    "section": "Style 4 — Clay Animation",
+    "title": "A miniature clay animation 3D floating [object with attributes] on a white background. The",
+    "notes": "Notice one crucial two-word constraint at the very end of this book prompt: \"no text.\" That stops the AI from scribbling fake gibberish titles on the book spines!"
+  },
+  {
+    "index": 55,
+    "image": "slides/slide_55.webp",
+    "section": "Style 4 — Clay Animation",
+    "title": "Miniature Clay Animation — STYLE 4",
+    "notes": "Here it is for a music collective or youth arts session—an open acoustic guitar case in handmade clay."
+  },
+  {
+    "index": 56,
+    "image": "slides/slide_56.webp",
+    "section": "Style 4 — Clay Animation",
+    "title": "A miniature clay animation 3D floating [object with attributes] on a white background. The",
+    "notes": "We keep the exact same claymation wrapper and simply plug in: \"still life of an open acoustic guitar hardcase on floorboards.\""
+  },
+  {
+    "index": 57,
+    "image": "slides/slide_57.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "Don't Let AI Spell! — AI is an illustrator, not a typesetter.",
+    "notes": "Here is the golden rule: NEVER let AI write words on your poster. It will spell your charity's name wrong, pick terrible fonts, and crowd the frame. Treat AI purely as your background illustrator. Add your typography in Google Slides where you have 100% control."
+  },
+  {
+    "index": 58,
+    "image": "slides/slide_58.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "Negative Space — Always direct empty space for your text.",
+    "notes": "Always instruct the AI where to leave empty space. Say: 'Subject framed in the bottom third, open wall in top third for text.' That gives you an instant clean billboard ready for your headline, date, and QR code."
+  },
+  {
+    "index": 59,
+    "image": "slides/slide_59.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "",
+    "notes": "Let's build a real poster right here inside Google Slides for one of the organizations in this room. \nShani, don’t worry, I picked Fill your cup because it looks actually good. Good brand consistency!"
+  },
+  {
+    "index": 60,
+    "image": "slides/slide_60.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "",
+    "notes": "So, first put your image in the lower third"
+  },
+  {
+    "index": 61,
+    "image": "slides/slide_61.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "",
+    "notes": "Put your logo up there."
+  },
+  {
+    "index": 62,
+    "image": "slides/slide_62.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "@fillyourcupltd — Fill your Cup",
+    "notes": "The name of your business.\nAnd your handles."
+  },
+  {
+    "index": 63,
+    "image": "slides/slide_63.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "@fillyourcupltd — Fill your Cup",
+    "notes": "Add a paragraph of what your company does."
+  },
+  {
+    "index": 64,
+    "image": "slides/slide_64.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "@fillyourcupltd — Flexible",
+    "notes": "And if you want, you can add more graphic, all within slides."
+  },
+  {
+    "index": 65,
+    "image": "slides/slide_65.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "🫵",
+    "notes": "Should we try together?\n\n[15 minutes sprint trying to generate an image]"
+  },
+  {
+    "index": 66,
+    "image": "slides/slide_66.webp",
+    "section": "IV. Layout in Google Slides & Sprint",
+    "title": "STYLE 3 — 80’s fanzine",
+    "notes": "Leave this slide on screen for the 15-minute sprint! Pick one of these 4 style headers—Risograph, Screenprint, 80s Fanzine, or Clay Animation—add one sentence at the bottom describing an object from your charity's world with plenty of empty white background, generate your image in Gemini, and drop it into Google Slides to add your title!"
+  },
+  {
+    "index": 67,
+    "image": "slides/slide_67.webp",
+    "section": "V. What’s Next & Closing",
+    "title": "What You Have & What's Next",
+    "notes": "Look at what you accomplished in 90 minutes: you have your Grassroots Grant Partner Gem, two evaluation Skills, a real Equality Fund draft, and 4 tactile Style Cards. Your mission is to submit your Equality Fund grant before October 17th at midday! And for homework, install Google Antigravity (antigravity.google) before November 20th—because in Session 2, we leave chatbots behind and teach you how to use autonomous agents like grill-with-docs and build your own custom micro-tools!"
+  },
+  {
+    "index": 68,
+    "image": "slides/slide_68.webp",
+    "section": "V. What’s Next & Closing",
+    "title": "04 / THE VOICE — AI is the instrument. You are the soul.",
+    "notes": "To close: remember that tech is just tools. A hammer doesn't build a community; a human does. AI is the instrument, but YOUR dedication to Camden is the soul. Thank you for all that you do!"
+  }
+]

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>CLP 2026 — Gems, Skills &amp; Styles</title>
+  <title>CLP 2026 — Slides, Gems, Skills &amp; Styles</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -15,6 +15,10 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #000000;
       color: #ffffff;
@@ -23,6 +27,44 @@
       line-height: 1.45;
       -webkit-font-smoothing: antialiased;
       padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 4vw, 3.5rem) 4rem;
+    }
+
+    /* Top Jump Nav */
+    .top-nav {
+      max-width: 1440px;
+      margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #222222;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 2rem;
+    }
+
+    .top-nav-brand {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #b3b3b3;
+    }
+
+    .top-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.75rem;
+    }
+
+    .top-nav-links a {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      font-size: 0.95rem;
+      transition: opacity 0.15s ease;
+    }
+
+    .top-nav-links a:hover {
+      opacity: 0.65;
     }
 
     /* Slide-style Section Layout */
@@ -146,6 +188,186 @@
       word-break: break-word;
     }
 
+    /* ==========================================
+       HANDOVER SLIDES & SPEAKER NOTES VIEWER
+       ========================================== */
+    .chapter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .chapter-btn {
+      background: #0d0d0d;
+      border: 1px solid #262626;
+      color: #b3b3b3;
+      font-family: inherit;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      padding: 0.42rem 0.75rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chapter-btn:hover {
+      border-color: #666666;
+      color: #ffffff;
+    }
+
+    .chapter-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
+
+    .deck-player {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr);
+      gap: 2.75rem;
+      align-items: start;
+    }
+
+    .deck-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0a0a0a;
+      border: 1px solid #262626;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .deck-stage img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .deck-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: #ffffff;
+      transition: width 0.2s ease;
+    }
+
+    .deck-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .deck-nav-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .deck-counter {
+      font-size: 0.88rem;
+      color: #b3b3b3;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .deck-scrubber {
+      flex: 1;
+      min-width: 140px;
+      max-width: 280px;
+      accent-color: #ffffff;
+      cursor: pointer;
+    }
+
+    .deck-notes-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      padding: 0.25rem 0;
+    }
+
+    .deck-notes-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888888;
+      margin-bottom: 0.5rem;
+    }
+
+    .deck-notes-heading {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #ffffff;
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #222222;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .deck-notes-body {
+      font-size: 1.05rem;
+      line-height: 1.58;
+      color: #e0e0e0;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .deck-notes-empty {
+      color: #666666;
+      font-style: italic;
+    }
+
+    /* All-Slides Vertical Stack View */
+    .deck-all-list {
+      display: none;
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 1rem;
+    }
+
+    .deck-all-list.visible {
+      display: flex;
+    }
+
+    .deck-all-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr);
+      gap: 2.5rem;
+      align-items: start;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .deck-all-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .deck-all-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0a0a0a;
+      border: 1px solid #262626;
+      overflow: hidden;
+    }
+
+    .deck-all-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
     /* Slide Footer */
     footer {
       max-width: 1440px;
@@ -175,6 +397,14 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 2.25rem;
       }
+      .deck-player {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+      .deck-all-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
     }
 
     @media (max-width: 640px) {
@@ -187,15 +417,93 @@
         padding-top: 2rem;
         border-top: 1px solid #1a1a1a;
       }
+      .deck-scrubber {
+        max-width: 100%;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
+  <nav class="top-nav">
+    <div class="top-nav-brand">CLP 2026 — AI &amp; Creativity Workshop (Part 1)</div>
+    <div class="top-nav-links">
+      <a href="#slides">Workshop Slides (68)</a>
+      <a href="#gems">Gems</a>
+      <a href="#skills">Skills</a>
+      <a href="#styles">4 Style Cards</a>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       0. HANDOVER SLIDES & SPEAKER NOTES
+       ========================================== -->
+  <section id="slides" class="slide-section">
+    <div class="slide-top">
+      <div class="slide-title">Workshop Slides</div>
+      <div class="slide-desc">
+        The complete 68-slide workshop handover deck with speaker notes on the side.
+        <div class="copy-bar" style="margin-top: 0.65rem; margin-bottom: 0;">
+          <button id="toggle-all-btn" class="copy-btn" onclick="toggleAllSlidesView()">Show All 68 Slides</button>
+          <a class="copy-btn" href="https://docs.google.com/presentation/d/1grbsy1d7EljwmjWTkvKnRUB9kol_ZqVl9I5ZGkt1dFM/edit" target="_blank" rel="noopener">Open in Google Slides &nearr;</a>
+        </div>
+      </div>
+      <div class="slide-note">
+        Use &larr; &rarr; arrow keys, click the slide, or jump by chapter below.
+      </div>
+    </div>
+
+    <div class="chapter-bar" id="chapter-bar">
+      <button class="chapter-btn active" data-start="1" data-end="3" onclick="goToSlide(1)">I. Intro (1–3)</button>
+      <button class="chapter-btn" data-start="4" data-end="21" onclick="goToSlide(4)">II. Grant Writing (4–21)</button>
+      <button class="chapter-btn" data-start="23" data-end="30" onclick="goToSlide(23)">III. Anti-Slop (23–30)</button>
+      <button class="chapter-btn" data-start="31" data-end="37" onclick="goToSlide(31)">Style 1: Risograph (31–37)</button>
+      <button class="chapter-btn" data-start="38" data-end="42" onclick="goToSlide(38)">Style 2: Screenprint (38–42)</button>
+      <button class="chapter-btn" data-start="43" data-end="49" onclick="goToSlide(43)">Style 3: Fanzine (43–49)</button>
+      <button class="chapter-btn" data-start="50" data-end="56" onclick="goToSlide(50)">Style 4: Clay (50–56)</button>
+      <button class="chapter-btn" data-start="57" data-end="66" onclick="goToSlide(57)">IV. Poster Layout (57–66)</button>
+      <button class="chapter-btn" data-start="67" data-end="68" onclick="goToSlide(67)">V. What’s Next (67–68)</button>
+    </div>
+
+    <!-- Single-Slide Interactive View -->
+    <div id="deck-player-view" class="deck-player">
+      <div class="deck-stage-wrap">
+        <div class="deck-stage" id="deck-stage" onclick="handleStageClick(event)" title="Click left/right side to navigate">
+          <img id="active-slide-img" src="slides/slide_01.webp" alt="Workshop Slide 1" />
+          <div id="deck-progress" class="deck-progress" style="width: 1.47%;"></div>
+        </div>
+        <div class="deck-controls">
+          <div class="deck-nav-group">
+            <button class="copy-btn" onclick="stepSlide(-1)">&larr; Previous</button>
+            <span id="deck-counter" class="deck-counter">Slide 1 of 68</span>
+            <button class="copy-btn" onclick="stepSlide(1)">Next &rarr;</button>
+          </div>
+          <input id="deck-scrubber" class="deck-scrubber" type="range" min="1" max="68" value="1" oninput="goToSlide(parseInt(this.value, 10))" aria-label="Slide scrubber" />
+        </div>
+      </div>
+
+      <div class="deck-notes-panel">
+        <div>
+          <div id="active-slide-section" class="deck-notes-meta">SLIDE 01 / 68 &mdash; I. INTRO &mdash; CREATIVE SELF-DETERMINATION</div>
+          <div class="deck-notes-heading">
+            <span>Speaker Notes</span>
+            <button class="copy-btn" style="font-size: 0.85rem; min-height: 28px; padding: 0;" onclick="copyActiveNotes(this)">Copy Notes</button>
+          </div>
+          <div id="active-slide-notes" class="deck-notes-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All-68-Slides Vertical Scroll View -->
+    <div id="deck-all-view" class="deck-all-list"></div>
+  </section>
+
+
   <!-- ==========================================
        1. GEM
        ========================================== -->
-  <section class="slide-section">
+  <section id="gems" class="slide-section">
     <div class="slide-top">
       <div class="slide-title">Gems</div>
       <div class="slide-desc">
@@ -258,7 +566,7 @@ Only when all 5 branches are resolved in the Ledger and the user confirms they a
   <!-- ==========================================
        2. SKILLS
        ========================================== -->
-  <section class="slide-section">
+  <section id="skills" class="slide-section">
     <div class="slide-top">
       <div class="slide-title">Skills</div>
       <div class="slide-desc">
@@ -338,7 +646,7 @@ Reprint my draft below, and wherever you spot a corporate, academic, or AI-slop 
   <!-- ==========================================
        3. STYLES
        ========================================== -->
-  <section class="slide-section">
+  <section id="styles" class="slide-section">
     <div class="slide-top">
       <div class="slide-title">4 Style Cards</div>
       <div class="slide-desc">
@@ -405,7 +713,176 @@ Object: [describe your object in 1 sentence], no text</div>
     <div>PRIVILEGED &amp; CONFIDENTIAL</div>
   </footer>
 
-  <script>
+    <script>
+    const SLIDES_DATA = [{"index": 1, "image": "slides/slide_01.webp", "section": "I. Intro — Creative Self-Determination", "title": "AI CREATIVITY — CLP Part 1 - AI & Creativity Workshop", "notes": "Welcome to the Camden Community Leadership Programme AI & Creativity Workshop (Part 1)."}, {"index": 2, "image": "slides/slide_02.webp", "section": "I. Intro — Creative Self-Determination", "title": "You don't need permission from gatekeepers to tell your story — AI gives your community's", "notes": "Welcome everyone to the Community Leadership Programme AI workshop. Today is about one thing: Creative Self-Determination. You are running vital community charities across Camden—often completely solo, juggling families, jobs, and sleepless nights. AI isn't here to replace you; it's here to give you an extra pair of hands so your community's authentic voice can never be ignored."}, {"index": 3, "image": "slides/slide_03.webp", "section": "I. Intro — Creative Self-Determination", "title": "AI & Creative Self-Determination", "notes": "That is what we call Creative Self-Determination. It’s not about cutting headcount or corporate efficiency—it’s about giving you the agency and confidence to tell your community’s story on your own terms, without waiting for permission or big budgets."}, {"index": 4, "image": "slides/slide_04.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "The #1 Founder Bottleneck — You voted Grant Writing as your biggest headache.", "notes": "Right—we have looked at the weird, delightful things we make at Creative Lab. Now let’s get practical, starting with the #1 operational bottleneck you voted for in Oliver’s survey: Grant Writing. Sitting in front of a blank screen at 11 PM trying to guess what corporate jargon funders want to hear. Today, we turn Gemini into your 24/7 personal grant strategist."}, {"index": 5, "image": "slides/slide_05.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Partner Spotlight: Camden Giving — I.", "notes": "This isn't a theoretical exercise. Our program partner, Camden Giving, has The Equality Fund 2026 open right now. It closes on October 17th at midday—two weeks from today. Every single charity in this room is eligible to apply for up to £20,000."}, {"index": 6, "image": "slides/slide_06.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Camden Giving AI policy — RULE 2", "notes": "Camden Giving has an AI policy. I absolutely love it.\nI think it’s spot on and really ties to what we can all agree on. AI cannot replace humans."}, {"index": 7, "image": "slides/slide_07.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "RULE 3 — Be Honest About AI", "notes": "It cannot lie. It’s a tool and we cannot blame AI for our poor judgement.\nIn a sentence, don’t be evil."}, {"index": 8, "image": "slides/slide_08.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Camden Giving AI policy — RULE 6", "notes": "I wish some of our politicians agreed with these guidelines too."}, {"index": 9, "image": "slides/slide_09.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Not corporate bureaucrats or bank trustees. — A panel of local Camden citizens with lived", "notes": "Here's the secret: Camden Giving uses participatory grantmaking. Your application is not read by corporate bureaucrats or bank trustees—it is read and decided by a panel of local Camden citizens who have personal lived experience of inequality. When a neighbour from Somers Town or Kilburn reads your proposal, they can smell corporate buzzwords and AI slop a mile away. They want the honest truth of your street."}, {"index": 10, "image": "slides/slide_10.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "NOT THIS — Corporate AI Slop", "notes": "If you wouldn't say it sitting across a kitchen table over a cup of tea, don't let AI write it. Corporate jargon gets rejected by local panels. Grounded street reality wins."}, {"index": 11, "image": "slides/slide_11.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Gemini knows the world. — Personal Intelligence connects it to YOUR charity's Docs & Drive", "notes": "Right now, most AI is like a stranger on the street—it knows the internet, but nothing about your charity. Personal Intelligence bridges that gap by securely connecting Gemini to your Google Workspace—your Docs, Drive, and Gmail. Instead of digging through folders for last year's impact numbers or trustee notes, Gemini can pull straight from your own documents."}, {"index": 12, "image": "slides/slide_12.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Gems — Gems = Who you talk to, a specialist who remembers your rules.", "notes": "The biggest time-waster in AI is prompt fatigue—re-explaining what your charity does, who you serve in Camden, and your Kitchen Table tone in every new chat. Gemini Gems fix that. A Gem is a custom specialist you set up once with your charity's background and Camden Giving's rules. Whenever a new grant opens, you just open your Grant Partner Gem and start talking."}, {"index": 13, "image": "slides/slide_13.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Skills — Skills = Playbooks you trigger, modular actions you run on any draft.", "notes": "If a Gem is a specialist you chat with, Skills are modular playbooks you can trigger at any moment. Today we are going to use 1 Gem to interview us and write our first draft, and then trigger 2 custom Skills—tough-evaluator and peer-scorecard—to stress-test our facts and cross out any corporate buzzwords."}, {"index": 14, "image": "slides/slide_14.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "gastanuke.github.io/clp", "notes": "So now let’s make them to apply for a grant.\n\nYou can access the prompts we’re using from this website, you should be able to do everything from your phone too."}, {"index": 15, "image": "slides/slide_15.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Don't Stare at a Blank Page: — Tell the Gem what your charity does in 2 messy sentences.", "notes": "Step 1 is your Grassroots Grant Partner Gem. Instead of staring at a blank portal or pasting long prompts, you just tell the Gem what your charity does in two messy sentences. It flips the script: it interviews YOU 2 or 3 questions at a time, builds a live Grant Ledger of your numbers and budget, and only writes Draft 1 once your real Camden street facts are locked in."}, {"index": 16, "image": "slides/slide_16.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "", "notes": "Let’s create your Grassroots Grant Partner Gem together right now. Open Gemini, click Gem Manager -> New Gem, and copy-paste the name and instructions from gastanuke.github.io/clp. In 60 seconds, you’ll have a 24/7 Camden grant strategist saved in your sidebar."}, {"index": 17, "image": "slides/slide_17.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Step 2: Skill 1 — tough-evaluator — I.", "notes": "Step 2: Never submit your first draft. Once your Gem writes Draft 1, trigger your first Skill: tough-evaluator. It acts as a tired, skeptical Camden Giving citizen panelist who has read 40 applications today. It gives you 3 blunt reasons your draft would get rejected, points out what street proof is missing, and asks you 1 or 2 sharp questions to fix it in 5 minutes."}, {"index": 18, "image": "slides/slide_18.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "", "notes": "Here is how you add your first Skill in Gemini: click More -> Customise -> Skills -> New Skill, and copy-paste tough-evaluator from gastanuke.github.io/clp."}, {"index": 19, "image": "slides/slide_19.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Dignity & Pride: — Does it show community strength rather than pity?", "notes": "Step 3: Trigger your second Skill, peer-scorecard. It scores your draft on Street Reality, Dignity & Pride, and the Tea Test—and literally crosses out any corporate buzzwords using strikethrough text with plain human replacements next to them. Then turn your laptop screen to your pod partner and read it aloud over a cup of tea!"}, {"index": 20, "image": "slides/slide_20.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "", "notes": "And here is how you add your second Skill in Gemini: click More -> Customise -> Skills -> New Skill, and copy-paste peer-scorecard from gastanuke.github.io/clp."}, {"index": 21, "image": "slides/slide_21.webp", "section": "II. Grant Writing — Camden Giving & Gemini", "title": "Hands-On Sprint (20 Mins): Run the 3-Tool Pipeline — I.", "notes": "Now it is your turn—20 minutes in pairs, one types and one talks. First, take 3 minutes to copy-paste the Gem and 2 Skills from gastanuke.github.io/clp. Second, open your Grassroots Grant Partner Gem, answer 2 rounds of interview questions, and generate Draft 1. Third, run @tough-evaluator to plug in missing street facts. Fourth, run @peer-scorecard and read your final paragraph aloud to your partner!"}, {"index": 22, "image": "slides/slide_22.webp", "section": "Break", "title": "", "notes": "Amazing work on your Equality Fund drafts! Let’s take a 5-minute bio break—grab a cup of tea, stretch your legs, and when we come back, we will shift from words to visuals and make posters for your projects."}, {"index": 23, "image": "slides/slide_23.webp", "section": "III. Anti-Slop & Visual Direction", "title": "AI is not a creative genius. — It's a fast, obedient, slightly naive pair of hands.", "notes": "Welcome back! You now have a grounded grant draft for your charity. Next, let’s give your project a visual voice to match—without a £20,000 corporate agency on retainer. When it comes to visuals, AI isn’t here to replace your taste; it’s a fast, obedient pair of hands. You are the editor-in-chief."}, {"index": 24, "image": "slides/slide_24.webp", "section": "III. Anti-Slop & Visual Direction", "title": "Default AI: Oily plastic, exaggerated tears, pity-mongering. — Authentic Craft: Physical t", "notes": "You've all seen AI slop. It's that glossy, airbrushed, video-game sheen. When people type 'homeless charity poster', the machine draws crying children in dark alleys with neon lens flares. It feels exploitative and fake. In community work, trust is everything. If your flyer looks like an energy drink advert, nobody trusts you. Dignity is non-negotiable."}, {"index": 25, "image": "slides/slide_25.webp", "section": "III. Anti-Slop & Visual Direction", "title": "Take pictures! Look how wonderful and diverse Camden is. — Use your experience, what do yo", "notes": "Infuse everything with your soul. People love to connect with people, they are not impressed by polished posters."}, {"index": 26, "image": "slides/slide_26.webp", "section": "III. Anti-Slop & Visual Direction", "title": "51 St Pancras Way, London NW1 0PU — Museum of Youth", "notes": "If you need some inspiration, go visit the Museum of Youth just 10 minutes away from here. It’s beautiful."}, {"index": 27, "image": "slides/slide_27.webp", "section": "III. Anti-Slop & Visual Direction", "title": "MY REFERENCES", "notes": "For example I grew up reading photocopied fanzines. I love to work with 2 colors.\nLimitations are a great way to do good design."}, {"index": 28, "image": "slides/slide_28.webp", "section": "III. Anti-Slop & Visual Direction", "title": "MY REFERENCES", "notes": "Risoprint is also great, very tactile."}, {"index": 29, "image": "slides/slide_29.webp", "section": "III. Anti-Slop & Visual Direction", "title": "3 colors, 2 seconds, looping. 100 gifs — REPETITION IS STYLE", "notes": "Repetition is style. When you lock in strict rules—3 colors, 2-second loops, one consistent texture—suddenly 100 different clips feel like a unified brand campaign. For your charity, picking one visual rule and repeating it everywhere builds instant recognition across Camden."}, {"index": 30, "image": "slides/slide_30.webp", "section": "III. Anti-Slop & Visual Direction", "title": "MY ADVICE — 1. [Write a 1 sentence style]", "notes": "Stop writing long, polite paragraphs to image tools. Use this two-part formula: first, lock in your visual style in three beats—a one-sentence style, a physical medium with limited colours, and real physical imperfections like ink bleed or paper grain. Then, and only then, write one sentence describing your subject. And ban the word 'photorealistic'—that word triggers the computer's cheesy 3D rendering engine and guarantees plastic slop."}, {"index": 31, "image": "slides/slide_31.webp", "section": "Style 1 — Risograph", "title": "STYLE 1 — Risograph", "notes": "Style Card 1: Risograph. Inspired by independent community printshops across London. Strictly two inks—high-contrast scarlet red and deep blue. You get visible halftone dots, grain dithering, and subtle ink misregistration. It feels tactile, joyful, and handmade."}, {"index": 32, "image": "slides/slide_32.webp", "section": "Style 1 — Risograph", "title": "STYLE 1 — Risograph", "notes": "Look at what happens when we take an everyday object from your world—battered stacking chairs in a community hall—and run it through a two-color red and blue risograph constraint."}, {"index": 33, "image": "slides/slide_33.webp", "section": "Style 1 — Risograph", "title": "Strictly duo tone (red and blue) risograph print featuring distinct grain dithering, tacti", "notes": "Here is the exact prompt. Notice the two halves: first, we lock in the physical medium—strictly duotone red and blue risoprint with halftone dots and ink misregistration. Second, we describe specific, lived-in details: scratched chrome legs, a bent umbrella, a lost wool mitten—all against an expansive clean white background so we have room for text."}, {"index": 34, "image": "slides/slide_34.webp", "section": "Style 1 — Risograph", "title": "STYLE 1 — Risograph", "notes": "Another everyday community kitchen moment: the wire draining rack packed with decades of mismatched mugs after a session."}, {"index": 35, "image": "slides/slide_35.webp", "section": "Style 1 — Risograph", "title": "Strictly duo tone (red and blue) risograph print featuring distinct grain dithering, tacti", "notes": "Same exact style header at the top, and then we just swap the subject at the bottom: stoneware diner mugs, a chipped porcelain cup, a child’s plastic beaker—explicitly specifying no logos or text on the mugs."}, {"index": 36, "image": "slides/slide_36.webp", "section": "Style 1 — Risograph", "title": "STYLE 1 — Risograph", "notes": "I once read that to fill a room, a coffee maker on the stove is enough."}, {"index": 37, "image": "slides/slide_37.webp", "section": "Style 1 — Risograph", "title": "STYLE 1 — Risograph", "notes": "Again, keep the risograph recipe identical at the top, and isolate the object against a clean white background with zero surrounding kitchen clutter."}, {"index": 38, "image": "slides/slide_38.webp", "section": "Style 2 — Screenprint", "title": "STYLE 2 — Minimalist modernist screenprint on heavy ecru cotton-rag paper. Chalky carbon b", "notes": "Style Card 2: Black and Gold Screenprint. Dense chalky carbon black and burnished antique gold ink on heavy flecked cotton-rag paper, complete with dry-screen micro-defects and registration offsets. It gives immediate authority and timeless dignity to advocacy, adult education, and community campaigns."}, {"index": 39, "image": "slides/slide_39.webp", "section": "Style 2 — Screenprint", "title": "STYLE 2 — Black and gold screen print", "notes": "Even with pure geometric shapes locked into an asymmetric grid, the flecked cotton paper and chalky screenprint ink make it feel like a physical gallery print rather than a cold computer graphic."}, {"index": 40, "image": "slides/slide_40.webp", "section": "Style 2 — Screenprint", "title": "Minimalist modernist screenprint on heavy ecru cotton-rag paper. Chalky carbon black and b", "notes": "Look at the prompt structure: first, the tactile duotone screenprint medium on heavy ecru cotton-rag paper; second, bold monolithic geometric shapes arranged in an asymmetric grid across a warm off-white canvas."}, {"index": 41, "image": "slides/slide_41.webp", "section": "Style 2 — Screenprint", "title": "STYLE 2 — Black and gold screen print", "notes": "Here, even simpler."}, {"index": 42, "image": "slides/slide_42.webp", "section": "Style 2 — Screenprint", "title": "Minimalist modernist screenprint on heavy ecru cotton-rag paper. Chalky carbon black and b", "notes": "Sometimes less is more."}, {"index": 43, "image": "slides/slide_43.webp", "section": "Style 3 — 80’s Fanzine", "title": "STYLE 3 — Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy gr", "notes": "Style Card 3: 80s DIY Fanzine. Think Manchester post-punk zines like Acrylic Daze. Brutal high-contrast photocopy grain, over-inked black toner, visible paste-up tape edges, and dirty scanner-bed noise. It screams grassroots authenticity—perfect for youth initiatives, music, and community gardens."}, {"index": 44, "image": "slides/slide_44.webp", "section": "Style 3 — 80’s Fanzine", "title": "STYLE 3 — 80s Monochrome Fanzine", "notes": "Look at how raw and tactile this cut-and-paste photocopy style looks for a community gardening or food project."}, {"index": 45, "image": "slides/slide_45.webp", "section": "Style 3 — 80’s Fanzine", "title": "Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy grain, deep", "notes": "The top half locks in the xerox photocopy grain, over-inked black toner, and visible tape lines. The bottom half is just one sentence: an overhead cutout of terracotta pots with rosemary, mint, and heavy gardening shears."}, {"index": 46, "image": "slides/slide_46.webp", "section": "Style 3 — 80’s Fanzine", "title": "STYLE 3 — 80s Monochrome Fanzine", "notes": "Here is the exact same zine style for a supper club, food bank, or community bakery."}, {"index": 47, "image": "slides/slide_47.webp", "section": "Style 3 — 80’s Fanzine", "title": "Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy grain, deep", "notes": "Just swap the subject line at the bottom: a round crusty loaf sliced open on a cutting board beside a butter dish and spreader knife."}, {"index": 48, "image": "slides/slide_48.webp", "section": "Style 3 — 80’s Fanzine", "title": "STYLE 3 — 80s Monochrome Fanzine", "notes": "And here it is for a youth club, strategy workshop, or after-school games night."}, {"index": 49, "image": "slides/slide_49.webp", "section": "Style 3 — 80’s Fanzine", "title": "Raw cut-and-paste DIY zine collage rendered in brutal high-contrast photocopy grain, deep", "notes": "Again: same DIY zine header, swapped with a hard-angled side profile of wooden chess pieces casting long black shadows."}, {"index": 50, "image": "slides/slide_50.webp", "section": "Style 4 — Clay Animation", "title": "STYLE 4 — A miniature clay animation 3D floating [object with attributes] on a white backg", "notes": "Style Card 4: Miniature Clay Animation. Prompt formula: 'A miniature clay animation 3D floating [object] on a white background. The colors are bright and saturated, and the overall look is playful. Everything in the scene is made of colorful clay.' You can put literally whatever object you like at the end, and it gives you that tactile Aardman stop-motion charm that makes people smile instantly."}, {"index": 51, "image": "slides/slide_51.webp", "section": "Style 4 — Clay Animation", "title": "Miniature Clay Animation — STYLE 4", "notes": "Look at the texture here—you can practically feel the thumbprints in the clay. It is playful, warm, and impossible to mistake for plastic AI slop."}, {"index": 52, "image": "slides/slide_52.webp", "section": "Style 4 — Clay Animation", "title": "A miniature clay animation 3D floating [object with attributes] on a white background. The", "notes": "The formula stays identical every time: \"A miniature clay animation 3D floating [object] on a white background...\" Here, the object is taut vertical warp threads on a wooden loom with bobbins and snips."}, {"index": 53, "image": "slides/slide_53.webp", "section": "Style 4 — Clay Animation", "title": "Miniature Clay Animation — STYLE 4", "notes": "And for literacy, education, or community libraries—a row of colourful clay books leaning on a wooden shelf."}, {"index": 54, "image": "slides/slide_54.webp", "section": "Style 4 — Clay Animation", "title": "A miniature clay animation 3D floating [object with attributes] on a white background. The", "notes": "Notice one crucial two-word constraint at the very end of this book prompt: \"no text.\" That stops the AI from scribbling fake gibberish titles on the book spines!"}, {"index": 55, "image": "slides/slide_55.webp", "section": "Style 4 — Clay Animation", "title": "Miniature Clay Animation — STYLE 4", "notes": "Here it is for a music collective or youth arts session—an open acoustic guitar case in handmade clay."}, {"index": 56, "image": "slides/slide_56.webp", "section": "Style 4 — Clay Animation", "title": "A miniature clay animation 3D floating [object with attributes] on a white background. The", "notes": "We keep the exact same claymation wrapper and simply plug in: \"still life of an open acoustic guitar hardcase on floorboards.\""}, {"index": 57, "image": "slides/slide_57.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "Don't Let AI Spell! — AI is an illustrator, not a typesetter.", "notes": "Here is the golden rule: NEVER let AI write words on your poster. It will spell your charity's name wrong, pick terrible fonts, and crowd the frame. Treat AI purely as your background illustrator. Add your typography in Google Slides where you have 100% control."}, {"index": 58, "image": "slides/slide_58.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "Negative Space — Always direct empty space for your text.", "notes": "Always instruct the AI where to leave empty space. Say: 'Subject framed in the bottom third, open wall in top third for text.' That gives you an instant clean billboard ready for your headline, date, and QR code."}, {"index": 59, "image": "slides/slide_59.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "", "notes": "Let's build a real poster right here inside Google Slides for one of the organizations in this room. \nShani, don’t worry, I picked Fill your cup because it looks actually good. Good brand consistency!"}, {"index": 60, "image": "slides/slide_60.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "", "notes": "So, first put your image in the lower third"}, {"index": 61, "image": "slides/slide_61.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "", "notes": "Put your logo up there."}, {"index": 62, "image": "slides/slide_62.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "@fillyourcupltd — Fill your Cup", "notes": "The name of your business.\nAnd your handles."}, {"index": 63, "image": "slides/slide_63.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "@fillyourcupltd — Fill your Cup", "notes": "Add a paragraph of what your company does."}, {"index": 64, "image": "slides/slide_64.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "@fillyourcupltd — Flexible", "notes": "And if you want, you can add more graphic, all within slides."}, {"index": 65, "image": "slides/slide_65.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "🫵", "notes": "Should we try together?\n\n[15 minutes sprint trying to generate an image]"}, {"index": 66, "image": "slides/slide_66.webp", "section": "IV. Layout in Google Slides & Sprint", "title": "STYLE 3 — 80’s fanzine", "notes": "Leave this slide on screen for the 15-minute sprint! Pick one of these 4 style headers—Risograph, Screenprint, 80s Fanzine, or Clay Animation—add one sentence at the bottom describing an object from your charity's world with plenty of empty white background, generate your image in Gemini, and drop it into Google Slides to add your title!"}, {"index": 67, "image": "slides/slide_67.webp", "section": "V. What’s Next & Closing", "title": "What You Have & What's Next", "notes": "Look at what you accomplished in 90 minutes: you have your Grassroots Grant Partner Gem, two evaluation Skills, a real Equality Fund draft, and 4 tactile Style Cards. Your mission is to submit your Equality Fund grant before October 17th at midday! And for homework, install Google Antigravity (antigravity.google) before November 20th—because in Session 2, we leave chatbots behind and teach you how to use autonomous agents like grill-with-docs and build your own custom micro-tools!"}, {"index": 68, "image": "slides/slide_68.webp", "section": "V. What’s Next & Closing", "title": "04 / THE VOICE — AI is the instrument. You are the soul.", "notes": "To close: remember that tech is just tools. A hammer doesn't build a community; a human does. AI is the instrument, but YOUR dedication to Camden is the soul. Thank you for all that you do!"}];
+    let currentSlideIndex = 1;
+    let allSlidesRendered = false;
+    let showingAllSlides = false;
+
+    function pad2(n) {
+      return n < 10 ? '0' + n : '' + n;
+    }
+
+    function goToSlide(idx) {
+      if (idx < 1) idx = 1;
+      if (idx > SLIDES_DATA.length) idx = SLIDES_DATA.length;
+      currentSlideIndex = idx;
+      const item = SLIDES_DATA[idx - 1];
+
+      const img = document.getElementById('active-slide-img');
+      img.src = item.image;
+      img.alt = 'Workshop Slide ' + item.index + (item.title ? ': ' + item.title : '');
+
+      document.getElementById('deck-counter').textContent = 'Slide ' + item.index + ' of ' + SLIDES_DATA.length;
+      document.getElementById('deck-scrubber').value = item.index;
+      document.getElementById('deck-progress').style.width = ((item.index / SLIDES_DATA.length) * 100).toFixed(2) + '%';
+
+      document.getElementById('active-slide-section').textContent =
+        'SLIDE ' + pad2(item.index) + ' / ' + SLIDES_DATA.length + ' — ' + item.section.toUpperCase();
+
+      const notesEl = document.getElementById('active-slide-notes');
+      if (item.notes) {
+        notesEl.textContent = item.notes;
+        notesEl.classList.remove('deck-notes-empty');
+      } else {
+        notesEl.textContent = '(Visual slide — no spoken notes)';
+        notesEl.classList.add('deck-notes-empty');
+      }
+
+      // Highlight matching chapter button
+      document.querySelectorAll('.chapter-btn').forEach(btn => {
+        const start = parseInt(btn.getAttribute('data-start'), 10);
+        const end = parseInt(btn.getAttribute('data-end'), 10);
+        if (idx >= start && idx <= end) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Preload adjacent slides
+      [idx, idx - 2].forEach(adj => {
+        if (adj >= 0 && adj < SLIDES_DATA.length) {
+          const pre = new Image();
+          pre.src = SLIDES_DATA[adj].image;
+        }
+      });
+    }
+
+    function stepSlide(delta) {
+      goToSlide(currentSlideIndex + delta);
+    }
+
+    function handleStageClick(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      if (clickX < rect.width * 0.33) {
+        stepSlide(-1);
+      } else {
+        stepSlide(1);
+      }
+    }
+
+    function copyActiveNotes(btn) {
+      const item = SLIDES_DATA[currentSlideIndex - 1];
+      if (item && item.notes) {
+        copyText(item.notes, btn);
+      }
+    }
+
+    function toggleAllSlidesView() {
+      showingAllSlides = !showingAllSlides;
+      const playerView = document.getElementById('deck-player-view');
+      const allView = document.getElementById('deck-all-view');
+      const toggleBtn = document.getElementById('toggle-all-btn');
+
+      if (showingAllSlides) {
+        if (!allSlidesRendered) {
+          renderAllSlidesList();
+          allSlidesRendered = true;
+        }
+        playerView.style.display = 'none';
+        allView.classList.add('visible');
+        toggleBtn.textContent = 'Single Slide View';
+      } else {
+        playerView.style.display = 'grid';
+        allView.classList.remove('visible');
+        toggleBtn.textContent = 'Show All 68 Slides';
+      }
+    }
+
+    function renderAllSlidesList() {
+      const container = document.getElementById('deck-all-view');
+      const frag = document.createDocumentFragment();
+      SLIDES_DATA.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'deck-all-row';
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'deck-all-img-wrap';
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = item.image;
+        img.alt = 'Slide ' + item.index;
+        imgWrap.appendChild(img);
+
+        const notesCol = document.createElement('div');
+        notesCol.className = 'deck-notes-panel';
+
+        const meta = document.createElement('div');
+        meta.className = 'deck-notes-meta';
+        meta.textContent = 'SLIDE ' + pad2(item.index) + ' / ' + SLIDES_DATA.length + ' — ' + item.section.toUpperCase();
+
+        const heading = document.createElement('div');
+        heading.className = 'deck-notes-heading';
+        const label = document.createElement('span');
+        label.textContent = 'Speaker Notes';
+        heading.appendChild(label);
+
+        const body = document.createElement('div');
+        body.className = 'deck-notes-body' + (item.notes ? '' : ' deck-notes-empty');
+        body.textContent = item.notes || '(Visual slide — no spoken notes)';
+
+        notesCol.appendChild(meta);
+        notesCol.appendChild(heading);
+        notesCol.appendChild(body);
+
+        row.appendChild(imgWrap);
+        row.appendChild(notesCol);
+        frag.appendChild(row);
+      });
+      container.appendChild(frag);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (showingAllSlides) return;
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      if (e.key === 'ArrowRight') {
+        stepSlide(1);
+      } else if (e.key === 'ArrowLeft') {
+        stepSlide(-1);
+      }
+    });
+
+    // Touch swipe on slide stage
+    (function() {
+      const stage = document.getElementById('deck-stage');
+      let startX = 0;
+      stage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) startX = e.touches[0].clientX;
+      }, { passive: true });
+      stage.addEventListener('touchend', (e) => {
+        if (e.changedTouches.length === 1) {
+          const dx = e.changedTouches[0].clientX - startX;
+          if (Math.abs(dx) > 40) {
+            stepSlide(dx < 0 ? 1 : -1);
+          }
+        }
+      }, { passive: true });
+    })();
+
+    goToSlide(1);
+
     function flash(btn) {
       const orig = btn.textContent;
       btn.textContent = 'Copied';
